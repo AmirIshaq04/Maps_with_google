@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
 
 // on below line we have created the list of markers
   final List<Marker> _markers = <Marker>[
-    Marker(
+    const Marker(
         markerId: MarkerId('1'),
         position: LatLng(20.42796133580664, 75.885749655962),
         infoWindow: InfoWindow(
@@ -149,42 +149,42 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.grey,
         // on below line we have given title of app
-        title: Text("Navigation",style: TextStyle(color: Colors.blue),),
+        title: const Text("Navigation",style: TextStyle(color: Colors.blue),),
         centerTitle: true,
       ),
       body: Container(
         child: SafeArea(
           // on below line creating google maps
           child: GoogleMap(
-            // on below line setting camera position
+          
             initialCameraPosition: _kGoogle,
-            // on below line we are setting markers on the map
+            
             markers: Set<Marker>.of(_markers),
-            // on below line specifying map type.
+          
             mapType: MapType.normal,
-            // on below line setting user location enabled.
+          
             myLocationEnabled: true,
-            // on below line setting compass enabled.
+          
             compassEnabled: true,
-            // on below line specifying controller on map complete.
+           
             onMapCreated: (GoogleMapController controller){
               _controller.complete(controller);
             },
           ),
         ),
       ),
-      // on pressing floating action button the camera will take to user current location
+     
       floatingActionButton: FloatingActionButton(
         onPressed: () async{
           getUserCurrentLocation().then((value) async {
             print(value.latitude.toString() +" "+value.longitude.toString());
 
-            // marker added for current users location
+          
             _markers.add(
                 Marker(
-                  markerId: MarkerId("2"),
+                  markerId: const MarkerId("2"),
                   position: LatLng(value.latitude, value.longitude),
-                  infoWindow: InfoWindow(
+                  infoWindow: const InfoWindow(
                     title: 'My Current Location',
                   ),
                 )
@@ -202,12 +202,12 @@ class _HomePageState extends State<HomePage> {
             });
           });
         },
-        child: Icon(Icons.location_city),
+        child: const Icon(Icons.location_city),
       ),
       bottomNavigationBar: Container(
         height: 40,
-        child: GestureDetector(child: Padding(
-          padding: const EdgeInsets.all(8.0),
+        child: GestureDetector(child: const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Text('Sign out',style: TextStyle(color: Colors.blue),),
         ),onTap: (){
           showDialog(

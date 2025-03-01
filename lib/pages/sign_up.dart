@@ -76,9 +76,6 @@ class _homepageState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
 
-
-    // TextEditingController emailController=TextEditingController();
-    // TextEditingController passwordController =TextEditingController();
     return Scaffold(
         body: SafeArea(
           child: Padding(
@@ -129,29 +126,6 @@ class _homepageState extends State<SignUp> {
                   SizedBox(
                     height: 70.h,
                   ),
-                  // TextField(
-                  //   decoration: InputDecoration(
-                  //     //
-                  //       focusedBorder: OutlineInputBorder(
-                  //         borderRadius: BorderRadius.circular(8.r),
-                  //         borderSide:
-                  //         BorderSide(color: Colors.transparent, width: 0),
-                  //       ),
-                  //       enabledBorder: OutlineInputBorder(
-                  //         borderRadius: BorderRadius.circular(8.r),
-                  //         borderSide:
-                  //         BorderSide(color: Colors.transparent, width: 0),
-                  //       ),
-                  //       contentPadding:
-                  //       EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
-                  //       filled: true,
-                  //       fillColor: textFieldColor,
-                  //       hintText: "First Name",
-                  //       hintStyle: TextStyle(
-                  //         fontSize: 14.sp,
-                  //         fontWeight: FontWeight.w400,
-                  //       )),
-                  // ),
                   getTextField(hint: "Your Name",controller: namecontroller),
                   //  getTextField(hint: "Second Name"),
                   SizedBox(

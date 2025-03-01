@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -6,7 +6,7 @@ import 'package:mygeoapp/services/database.dart';
 import 'package:random_string/random_string.dart';
 
 class UserScreen extends StatefulWidget {
-  UserScreen({super.key});
+ const  UserScreen({super.key});
 
   @override
   State<UserScreen> createState() => _UserScreenState();

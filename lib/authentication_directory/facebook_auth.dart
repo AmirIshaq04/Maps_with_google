@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'loading.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 
@@ -18,12 +17,11 @@ Future<UserCredential> signInWithFacebook() async {
       );
     }
   } on FirebaseAuthException catch (e) {
-    // Handle Firebase authentication exceptions
     print('Firebase Auth Exception: ${e.message}');
-    throw e; // rethrow the exception
+    throw e; 
   } catch (e) {
-    // Handle other exceptions
+   
     print('Other Exception: $e');
-    throw e; // rethrow the exception
+    throw e; 
   }
 }

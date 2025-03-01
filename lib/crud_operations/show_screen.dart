@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:googleapis/blogger/v3.dart';
 import 'package:mygeoapp/crud_operations/user.dart';
 import 'package:mygeoapp/services/database.dart';
 
@@ -14,15 +12,15 @@ class ShowScreen extends StatefulWidget {
 }
 
 class _ShowScreenState extends State<ShowScreen> {
-  final purpleColor = Color(0xff6688FF);
+  final purpleColor = const Color(0xff6688FF);
 
-  final darkTextColor = Color(0xff1F1A3D);
+  final darkTextColor = const Color(0xff1F1A3D);
 
-  final lightTextdcolor = Color(0xff999999);
+  final lightTextdcolor = const Color(0xff999999);
 
-  final textFieldColor = Color(0xffF5F6FA);
+  final textFieldColor = const Color(0xffF5F6FA);
 
-  final borderColor = Color(0xffD9D9D9);
+  final borderColor = const Color(0xffD9D9D9);
   Stream? UserStream;
   getonload() async {
     UserStream = await DatabaseMethods().getUserDetails();
@@ -46,12 +44,12 @@ class _ShowScreenState extends State<ShowScreen> {
                   DocumentSnapshot ds = snapshot.data.docs[index];
                   return Container(
                     margin:
-                        EdgeInsets.only(bottom: 15.0, left: 15, right: 15).w,
+                        const EdgeInsets.only(bottom: 15.0, left: 15, right: 15).w,
                     child: Material(
                       elevation: 5.0,
                       borderRadius: BorderRadius.circular(10),
                       child: Container(
-                        padding: EdgeInsets.all(10).w,
+                        padding: const EdgeInsets.all(10).w,
                         margin: EdgeInsets.all(10.w),
                         width: MediaQuery.of(context).size.width * 0.85,
                         child: Column(
@@ -68,7 +66,7 @@ class _ShowScreenState extends State<ShowScreen> {
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 IconButton(
                                     onPressed: () {
                                       nameController.text=ds['Name'];
@@ -77,13 +75,13 @@ class _ShowScreenState extends State<ShowScreen> {
                                       editUserdetails(ds['userId']);
                                       // );
                                     },
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.edit,
                                       color: Colors.grey,
                                     )),
                                 IconButton(onPressed: ()async{
                                   await DatabaseMethods().deleteUserDetails(ds['userId']);
-                                }, icon: Icon(Icons.delete,color: Colors.black54,)),
+                                }, icon: const Icon(Icons.delete,color: Colors.black54,)),
                               ],
                             ),
                             Text(
@@ -118,7 +116,7 @@ class _ShowScreenState extends State<ShowScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton.small(
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
           onPressed: () {
             Navigator.push(
                 context,
@@ -132,14 +130,14 @@ class _ShowScreenState extends State<ShowScreen> {
             text: "User",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Color(0xff6688FF),
+                color: const Color(0xff6688FF),
                 fontSize: 25.sp),
             children: <InlineSpan>[
               WidgetSpan(
                   alignment: PlaceholderAlignment.baseline,
                   baseline: TextBaseline.alphabetic,
                   child: SizedBox(width: 5.w)),
-              TextSpan(
+              const TextSpan(
                 text: "Profile",
                 style: TextStyle(
                     fontWeight: FontWeight.bold, color: Colors.black54),
@@ -176,7 +174,7 @@ class _ShowScreenState extends State<ShowScreen> {
                   children: [
                     IconButton(onPressed: (){
                       Navigator.pop(context);
-                    }, icon: Icon(Icons.highlight_remove),),
+                    }, icon: const Icon(Icons.highlight_remove),),
                     SizedBox(width: 60.w,),
                     Text('Edit Details',style: TextStyle(color: Colors.blue,fontSize: 20.sp,fontWeight: FontWeight.w500),),
                   ],
@@ -194,11 +192,11 @@ class _ShowScreenState extends State<ShowScreen> {
                     decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.r),
-                          borderSide: BorderSide(color: Colors.transparent, width: 0),
+                          borderSide: const BorderSide(color: Colors.transparent, width: 0),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.r),
-                          borderSide: BorderSide(color: Colors.transparent, width: 0),
+                          borderSide: const BorderSide(color: Colors.transparent, width: 0),
                         ),
                         contentPadding:
                         EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
@@ -223,11 +221,11 @@ class _ShowScreenState extends State<ShowScreen> {
                     decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.r),
-                          borderSide: BorderSide(color: Colors.transparent, width: 0),
+                          borderSide: const BorderSide(color: Colors.transparent, width: 0),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.r),
-                          borderSide: BorderSide(color: Colors.transparent, width: 0),
+                          borderSide: const BorderSide(color: Colors.transparent, width: 0),
                         ),
                         contentPadding:
                         EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
@@ -252,11 +250,11 @@ class _ShowScreenState extends State<ShowScreen> {
                     decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.r),
-                          borderSide: BorderSide(color: Colors.transparent, width: 0),
+                          borderSide: const BorderSide(color: Colors.transparent, width: 0),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.r),
-                          borderSide: BorderSide(color: Colors.transparent, width: 0),
+                          borderSide: const BorderSide(color: Colors.transparent, width: 0),
                         ),
                         contentPadding:
                         EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
@@ -270,7 +268,7 @@ class _ShowScreenState extends State<ShowScreen> {
                 ),
                 SizedBox(height: 20.h,),
                 Padding(
-                  padding:  EdgeInsets.only(left: 20,right: 20).w,
+                  padding:  const EdgeInsets.only(left: 20,right: 20).w,
                   child: SizedBox(
                     width: double.infinity,
                     child: TextButton(
