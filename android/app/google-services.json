@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1028468354802",
+    "project_id": "map-app-b9fba",
+    "storage_bucket": "map-app-b9fba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028468354802:android:c8cd152a081ce7e6fcaa6b",
+        "android_client_info": {
+          "package_name": "com.example.mygeoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeXTXvgCTi5EZTfIRd4KOYOezsRvJy32g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
